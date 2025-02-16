@@ -1,18 +1,16 @@
-Overview
+Overview:
 
 Deploy a web application in a cloud-based Kubernetes solution, ensuring proper logging and monitoring are in place.
 
 
-
-Application Functionality
+Application Functionality:
 
 The web application shall have a simple static page of content.
 
 
+Expected Outcome:
 
-Expected Outcome
-
-Your solution should contain the following items.
+Your solution should contain the following items:
 
 ·    IAC templates (preferably terraform) used to provision the cloud infrastructure.
 
@@ -24,11 +22,9 @@ Your solution should contain the following items.
 
 ·    Clear documentation on how to deploy your solution.
 
-
-
-
 Solution
 
+Please follow the below steps for the deployment.
 
 
 Step 1: Build Terraform
