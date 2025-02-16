@@ -1,0 +1,19 @@
+apiVersion: elbv2.k8s.aws/v1beta1
+kind: TargetGroupBinding
+metadata:
+  name: demo-target-group-binding
+  namespace: default 
+spec:
+  serviceRef:
+    name: demo-service 
+    port: 80 
+  targetGroupARN: <we need to provide target group ARN that is created using terraform> 
+  targetType: ip 
+  healthCheck:
+    intervalSeconds: 30
+    path: /healthcheck
+    port: traffic-port
+    protocol: HTTP
+    timeoutSeconds: 5
+    unhealthyThresholdCount: 2
+    healthyThresholdCount: 3

@@ -1,0 +1,53 @@
+Overview
+
+Deploy a web application in a cloud-based Kubernetes solution, ensuring proper logging and monitoring are in place.
+
+
+
+Application Functionality
+
+The web application shall have a simple static page of content.
+
+
+
+Expected Outcome
+
+Your solution should contain the following items.
+
+·    IAC templates (preferably terraform) used to provision the cloud infrastructure.
+
+·    Kubernetes deployment files.
+
+·    Monitoring solution configuration (preferably Prometheus).
+
+·    Dockerfile that was used to containerize the sample web application.
+
+·    Clear documentation on how to deploy your solution.
+
+
+
+
+Solution
+
+
+
+Step 1: Build Terraform
+ > Execute the below commands in ATS-Demo folder
+ > terraform init
+ > terraform validate
+ > terraform plan
+ > terraform apply
+
+Step 2: Build docker image and push to AWS ECR repository
+ > aws ecr get-login-password --region <AWS_REGION> | docker login --username AWS --password-stdin <AWS_ACCOUNT_ID>.dkr.ecr.<AWS_REGION>.amazonaws.com
+ > aws ecr create-repository --repository-name atc-demo
+ > docker build -t atc-demo-sample.
+ > docker tag atc-demo-sample:latest <AWS_ACCOUNT_ID>.dkr.ecr.<AWS_REGION>.amazonaws.com/atc-demo:latest
+ >  docker push <AWS_ACCOUNT_ID>.dkr.ecr.<AWS_REGION>.amazonaws.com/atc-demo:latest
+
+Step 3: Kubernetes Deployment
+
+ > kubectl apply -f deployment.yaml
+ > kubectl apply -f target-group-binding.yaml
+ > kubectl create namespace monitoring
+ > kubectl apply -f prometheus.yaml
