@@ -24,7 +24,7 @@ Your solution should contain the following items:
 
 Solution
 
-Please follow the below steps for the deployment.
+Please follow the below steps for deployment.
 
 
 Step 1: Build Terraform
