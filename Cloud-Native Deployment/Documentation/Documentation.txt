@@ -22,7 +22,7 @@ Your solution should contain the following items:
 
 ·    Clear documentation on how to deploy your solution.
 
-Solution
+Solution:
 
 Please follow the below steps for deployment.
 
